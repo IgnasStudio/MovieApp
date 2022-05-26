@@ -1,0 +1,11 @@
+<div *ngFor="let movie of movies | async" class="row">
+  <img
+    src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+    class="img-thumbnail col-6"
+    alt="{{ movie.title }}"
+  />
+  <div class="col-6">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.overview }}</p>
+  </div>
+</div>
