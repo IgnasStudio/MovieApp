@@ -12,7 +12,7 @@ export class MovieListComponent {
   public movies: ResultsEntity[] = [];
   selectedId: number;
   @Output() selectedMovieId = new EventEmitter<number>();
-  //$movies = this.store.select('movies').pipe(map((state) => state.results));
+  
   public constructor(private readonly moviesFacade: MoviesFacade) {}
   ngOnInit() {
     this.moviesFacade.loadMovies;
@@ -24,7 +24,6 @@ export class MovieListComponent {
       )
       .subscribe((movies: ResultsEntity[]) => {
         this.movies = movies;
-        console.log(movies);
       });
   }
   save(movieId) {
